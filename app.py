@@ -48,9 +48,9 @@ def button_handler(s_in, s_out, g_in, s_cx):
  
     if input_ok:
         ctx = f"""
-and the startup code in backticks given as 
+and the startup code to refactor by embedding new output in backticks given as 
 ```
-{g_in}
+{s_cx}
 ```
 """
         prompt = f"""
@@ -58,7 +58,6 @@ Given the following pattern bounded in backticks:
 ```
 {s_in}
 ```
-{ctx if len(s_cx)>0 else ""}
 gives the following code output also in backticks:
 ```
 {s_out}
@@ -67,6 +66,8 @@ Generate the new code based on this new input in back ticks:
 ```
 {g_in}
 ```
+{ctx if len(s_cx)>0 else ""}
+
 Otherwise say "I don't understand the pattern"
 """
         response = get_completion(prompt)
