@@ -48,12 +48,10 @@ def button_handler(s_in, s_out, g_in, s_cx):
  
     if input_ok:
         ctx = f"""
-and the startup code to refactor by embedding new output in backticks given as 
-```
 {s_cx}
-```
 """
         prompt = f"""
+You are an expert in languages, data formats and text pattern recognition. 
 Given the following pattern bounded in backticks:
 ```
 {s_in}
@@ -71,6 +69,8 @@ Generate the new code based on this new input in back ticks:
 Otherwise say "I don't understand the pattern"
 """
         response = get_completion(prompt)
+        st.write(prompt)
+        st.write("=========================================")
         st.write(response)
     else:
         st.write(f"s_in={len(s_in)},g_in={len(g_in)}, s_cx={len(s_cx)}")
