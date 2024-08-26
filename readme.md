@@ -33,12 +33,6 @@ To use the Sidekick App, follow these steps:
    streamlit run app.py
    ```
 
-3. The application will launch in your default web browser, displaying the user interface.
-
-4. Load multiple PDF documents into the app by following the provided instructions.
-
-5. Ask questions in natural language about the loaded PDFs using the chat interface.
-
 ## Contributing
 ------------
 Feel free to fork, send a PR, utilize and enhance the app based on your own requirements.
